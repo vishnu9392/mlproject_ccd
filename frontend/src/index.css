@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glassmorphism helper */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.dark .glass {
+  background: rgba(2, 6, 23, 0.42);
+  border-color: rgba(148, 163, 184, 0.22);
+}
+
+/* Ripple button */
+.ripple-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.55);
+  animation: ripple 650ms ease-out;
+  opacity: 0.7;
+}
+
+@keyframes ripple {
+  to {
+    width: 520px;
+    height: 520px;
+    opacity: 0;
+  }
+}
+
